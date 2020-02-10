@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imageUrl: MyString
+  card_set_id: 1
+
+two:
+  imageUrl: MyString
+  card_set_id: 1
