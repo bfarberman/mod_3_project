@@ -2,10 +2,12 @@
   
   .grid-container {
     display: grid;
-    grid-template-columns: 50% 50%;
-    background-color:#00BFFF;
-    padding: 20px;
-    border-radius: 10px;
+    height: 85vh;
+    margin: 1rem;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    background-color:rgb(95, 29, 201);
+    padding: 10px;
+    border-radius: 40px;
     
   }
 
@@ -13,14 +15,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
   }
-
+  
   .grid-item img {
     height: 6rem;
     width: 7rem;
-    background-color: #80CBC4;
+    background-color: rgb(61, 178, 224);
     border: 5px solid #fff;
-    padding: 30px;
+    padding: 25px;
+    border-radius: 25px;
   }
