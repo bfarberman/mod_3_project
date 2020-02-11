@@ -25,3 +25,17 @@
     padding: 25px;
     border-radius: 25px;
   }
+
+  #counter {
+    background-color: black;
+    color: white;
+    display: table;
+    padding: 10px;
+  }
+
+
+
+  /* background-color:rgb(95, 29, 201);
+  background-color: rgb(61, 178, 224);
+  background-color: black;
+  color: white; */
