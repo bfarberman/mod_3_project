@@ -5,7 +5,7 @@
     height: 85vh;
     margin: 1rem;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    background-color:rgb(95, 29, 201);
+    background-color:rgb(156, 101, 245);
     padding: 10px;
     border-radius: 40px;
     
@@ -20,7 +20,7 @@
   .grid-item img {
     height: 6rem;
     width: 7rem;
-    background-color: rgb(61, 178, 224);
+    background-color: rgb(50, 186, 240);
     border: 5px solid #fff;
     padding: 25px;
     border-radius: 25px;
@@ -28,14 +28,31 @@
 
   #counter {
     background-color: black;
-    color: white;
-    display: table;
+    color: rgb(121, 217, 255);
+    display: inline;
     padding: 10px;
   }
 
+  #score {
+    display: inline;
+  
+  }
 
+  .white_content {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 16px;
+    border: 16px solid orange;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+  }
 
-  /* background-color:rgb(95, 29, 201);
+  background-color:rgb(95, 29, 201);
   background-color: rgb(61, 178, 224);
   background-color: black;
-  color: white; */
+  color: white;
