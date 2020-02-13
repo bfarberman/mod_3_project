@@ -41,15 +41,33 @@
   .white_content {
     display: none;
     position: absolute;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
+    top: 35%;
+    left: 35%;
+    width: 25%;
+    height: 25%;
     padding: 16px;
-    border: 16px solid orange;
+    border: 20px solid rgb(243, 25, 196);
     background-color: white;
-    z-index: 1002;
-    overflow: auto;
+    color: rgb(94, 18, 218);
+    border-radius: 20px;
+    /* z-index: 1002; */
+    /* overflow: auto; */
+  }
+
+  .leaderboard {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 25%;
+    height: 30%;
+    padding: 16px;
+    border: 20px solid rgb(243, 25, 196);
+    background-color: white;
+    color: rgb(94, 18, 218);
+    border-radius: 20px;
+    /* z-index: 1002; */
+    /* overflow: auto; */
   }
 
   background-color:rgb(95, 29, 201);
