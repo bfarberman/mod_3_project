@@ -38471,3 +38471,1818 @@ Processing by Api::V1::GamesController#index as */*
 Completed 200 OK in 59ms (Views: 34.4ms | ActiveRecord: 2.9ms | Allocations: 829612)
 
 
+Started GET "/api/v1/cards" for ::1 at 2020-02-13 21:58:22 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 59.2ms | ActiveRecord: 3.7ms | Allocations: 758407)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-13 21:58:33 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 59.6ms | ActiveRecord: 1.1ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-13 21:59:37 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"", "score"=>40, "card_set_id"=>1, "game"=>{"username"=>"", "score"=>40, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (3.4ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", ""], ["score", 40], ["card_set_id", 1], ["created_at", "2020-02-14 02:59:37.567439"], ["updated_at", "2020-02-14 02:59:37.567439"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 110ms (Views: 7.9ms | ActiveRecord: 6.4ms | Allocations: 1196353)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 21:59:37 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 97ms (Views: 35.3ms | ActiveRecord: 3.6ms | Allocations: 843781)
+
+
+Started DELETE "/api/v1/games/38" for ::1 at 2020-02-13 21:59:43 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 38]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 113ms (Views: 37.4ms | ActiveRecord: 5.8ms | Allocations: 1424638)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 21:59:43 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 65ms (Views: 31.3ms | ActiveRecord: 1.1ms | Allocations: 910166)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-13 21:59:49 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 1.0ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-13 22:01:01 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"mila", "score"=>30, "card_set_id"=>1, "game"=>{"username"=>"mila", "score"=>30, "card_set_id"=>1}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.2ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "mila"], ["score", 30], ["card_set_id", 1], ["created_at", "2020-02-14 03:01:01.595747"], ["updated_at", "2020-02-14 03:01:01.595747"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 95ms (Views: 6.7ms | ActiveRecord: 4.4ms | Allocations: 1192866)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:01:01 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 56ms (Views: 31.6ms | ActiveRecord: 1.0ms | Allocations: 839419)
+
+
+Started DELETE "/api/v1/games/36" for ::1 at 2020-02-13 22:01:18 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 36]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 108ms (Views: 34.5ms | ActiveRecord: 5.5ms | Allocations: 1420277)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:01:18 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 64ms (Views: 32.4ms | ActiveRecord: 1.1ms | Allocations: 903899)
+
+
+Started DELETE "/api/v1/games/26" for ::1 at 2020-02-13 22:01:23 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"26"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 107ms (Views: 33.1ms | ActiveRecord: 5.0ms | Allocations: 1412771)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:01:23 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 67ms (Views: 32.4ms | ActiveRecord: 3.4ms | Allocations: 894428)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:01:27 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 68ms (Views: 39.3ms | ActiveRecord: 1.2ms | Allocations: 819501)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:02:01 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 70ms (Views: 39.4ms | ActiveRecord: 3.6ms | Allocations: 819805)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:02:03 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 68ms (Views: 38.4ms | ActiveRecord: 3.5ms | Allocations: 819805)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-13 22:02:09 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 1.0ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-13 22:03:16 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"Sasha", "score"=>100, "card_set_id"=>1, "game"=>{"username"=>"Sasha", "score"=>100, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.3ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Sasha"], ["score", 100], ["card_set_id", 1], ["created_at", "2020-02-14 03:03:16.130794"], ["updated_at", "2020-02-14 03:03:16.130794"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 105ms (Views: 5.6ms | ActiveRecord: 4.4ms | Allocations: 1192866)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-13 22:03:16 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 59ms (Views: 33.0ms | ActiveRecord: 1.0ms | Allocations: 829612)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 09:48:05 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (5.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 73ms (Views: 65.2ms | ActiveRecord: 5.3ms | Allocations: 758407)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 09:48:38 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 4.0ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 09:49:17 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 60.7ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:49:35 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 77ms (Views: 40.4ms | ActiveRecord: 4.9ms | Allocations: 833971)
+
+
+Started DELETE "/api/v1/games/29" for ::1 at 2020-02-14 09:49:43 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"29"}
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (2.0ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 29]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (3.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 115ms (Views: 35.0ms | ActiveRecord: 8.0ms | Allocations: 1417248)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:49:43 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 61ms (Views: 34.6ms | ActiveRecord: 3.0ms | Allocations: 819805)
+
+
+Started DELETE "/api/v1/games/33" for ::1 at 2020-02-14 09:49:47 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"33"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 33]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (3.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 122ms (Views: 40.3ms | ActiveRecord: 9.1ms | Allocations: 1400663)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:49:47 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 76ms (Views: 35.8ms | ActiveRecord: 1.1ms | Allocations: 903772)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 09:52:44 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 134ms (Views: 128.4ms | ActiveRecord: 3.7ms | Allocations: 754351)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 09:54:06 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 4.0ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 09:55:12 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"Sasha", "score"=>50, "card_set_id"=>1, "game"=>{"username"=>"Sasha", "score"=>50, "card_set_id"=>1}}
+  [1m[35m (2.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (5.2ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (1.7ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Sasha"], ["score", 50], ["card_set_id", 1], ["created_at", "2020-02-14 14:55:12.237772"], ["updated_at", "2020-02-14 14:55:12.237772"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 97ms (Views: 6.8ms | ActiveRecord: 10.9ms | Allocations: 1198768)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:55:12 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 67ms (Views: 36.7ms | ActiveRecord: 1.1ms | Allocations: 819807)
+
+
+Started DELETE "/api/v1/games/28" for ::1 at 2020-02-14 09:55:20 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"28"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 28]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (4.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 118ms (Views: 40.7ms | ActiveRecord: 8.4ms | Allocations: 1400663)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:55:20 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 55ms (Views: 31.9ms | ActiveRecord: 3.0ms | Allocations: 809998)
+
+
+Started DELETE "/api/v1/games/27" for ::1 at 2020-02-14 09:56:38 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"27"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (3.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 27]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 105ms (Views: 32.9ms | ActiveRecord: 9.3ms | Allocations: 1390858)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 09:56:38 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 58ms (Views: 33.8ms | ActiveRecord: 1.0ms | Allocations: 800193)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:08:44 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 67ms (Views: 38.4ms | ActiveRecord: 1.4ms | Allocations: 804686)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:16:20 -0500
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 66ms (Views: 57.8ms | ActiveRecord: 3.7ms | Allocations: 758405)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:16:22 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 62ms (Views: 35.7ms | ActiveRecord: 1.3ms | Allocations: 804552)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:16:23 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 67ms (Views: 38.9ms | ActiveRecord: 1.2ms | Allocations: 800193)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:16:32 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 70ms (Views: 63.6ms | ActiveRecord: 4.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:16:34 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 74ms (Views: 42.6ms | ActiveRecord: 1.3ms | Allocations: 800193)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:17:37 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 4.4ms | Allocations: 754348)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:19:55 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (5.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 118ms (Views: 110.2ms | ActiveRecord: 5.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:20:09 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 102ms (Views: 89.1ms | ActiveRecord: 1.3ms | Allocations: 754348)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:21:26 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 113ms (Views: 104.7ms | ActiveRecord: 1.6ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:22:54 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 111ms (Views: 102.9ms | ActiveRecord: 1.4ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:23:31 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 118ms (Views: 108.2ms | ActiveRecord: 2.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:23:38 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 115ms (Views: 104.2ms | ActiveRecord: 1.4ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:24:57 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 76ms (Views: 48.3ms | ActiveRecord: 1.1ms | Allocations: 800193)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:25:34 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 78ms (Views: 71.3ms | ActiveRecord: 4.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:26:05 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 113ms (Views: 103.1ms | ActiveRecord: 4.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:26:35 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 119ms (Views: 110.0ms | ActiveRecord: 2.4ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:27:16 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 113ms (Views: 105.2ms | ActiveRecord: 4.7ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:27:52 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 123ms (Views: 114.1ms | ActiveRecord: 1.8ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:28:33 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 106ms (Views: 99.6ms | ActiveRecord: 4.2ms | Allocations: 754908)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:30:26 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 83ms (Views: 74.4ms | ActiveRecord: 1.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:31:17 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 71ms (Views: 64.3ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:31:30 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 85ms (Views: 78.2ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:33:53 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 69ms (Views: 65.1ms | ActiveRecord: 1.3ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:34:09 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 61ms (Views: 35.0ms | ActiveRecord: 3.4ms | Allocations: 800191)
+
+
+Started DELETE "/api/v1/games/34" for ::1 at 2020-02-14 10:34:11 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"34"}
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (3.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 34]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 108ms (Views: 34.1ms | ActiveRecord: 7.1ms | Allocations: 1385410)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:34:11 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 59ms (Views: 34.2ms | ActiveRecord: 3.2ms | Allocations: 791087)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:34:31 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 64ms (Views: 54.9ms | ActiveRecord: 4.0ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:40:03 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 61ms (Views: 57.2ms | ActiveRecord: 1.1ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:43:12 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 70ms (Views: 62.7ms | ActiveRecord: 1.3ms | Allocations: 754348)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:44:03 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 68ms (Views: 57.8ms | ActiveRecord: 4.5ms | Allocations: 754348)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:44:14 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 68ms (Views: 39.1ms | ActiveRecord: 1.1ms | Allocations: 790384)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:44:53 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 70ms (Views: 63.0ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:44:53 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 69ms (Views: 41.1ms | ActiveRecord: 3.8ms | Allocations: 790384)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:45:27 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 62.8ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:45:28 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 70ms (Views: 42.0ms | ActiveRecord: 1.1ms | Allocations: 790386)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:45:36 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 71ms (Views: 42.3ms | ActiveRecord: 1.2ms | Allocations: 790384)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:45:40 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 71ms (Views: 42.9ms | ActiveRecord: 1.2ms | Allocations: 790386)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:45:46 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 70ms (Views: 40.7ms | ActiveRecord: 1.2ms | Allocations: 790386)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:46:16 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 77ms (Views: 43.9ms | ActiveRecord: 3.8ms | Allocations: 790384)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:46:18 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 81ms (Views: 74.9ms | ActiveRecord: 1.2ms | Allocations: 754348)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:46:18 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 73ms (Views: 43.4ms | ActiveRecord: 1.1ms | Allocations: 790386)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:46:48 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 3.6ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:46:49 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 77ms (Views: 45.5ms | ActiveRecord: 4.9ms | Allocations: 790384)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:46:59 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 81ms (Views: 48.3ms | ActiveRecord: 1.2ms | Allocations: 790386)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:47:02 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 72ms (Views: 62.9ms | ActiveRecord: 3.8ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:47:03 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 65ms (Views: 39.1ms | ActiveRecord: 1.1ms | Allocations: 790386)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:47:17 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 75ms (Views: 44.8ms | ActiveRecord: 1.2ms | Allocations: 790386)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:47:39 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 103ms (Views: 96.7ms | ActiveRecord: 1.2ms | Allocations: 754351)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:47:40 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 66ms (Views: 40.4ms | ActiveRecord: 1.1ms | Allocations: 792857)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:48:14 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 1.1ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:48:14 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 67ms (Views: 36.9ms | ActiveRecord: 3.8ms | Allocations: 790384)
+
+
+Started DELETE "/api/v1/games/37" for ::1 at 2020-02-14 10:48:20 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 37]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 100ms (Views: 29.7ms | ActiveRecord: 4.9ms | Allocations: 1324628)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:48:21 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 52ms (Views: 30.7ms | ActiveRecord: 1.0ms | Allocations: 733961)
+
+
+Started DELETE "/api/v1/games/35" for ::1 at 2020-02-14 10:48:23 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"35"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Destroy (1.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 35]]
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:15:in `destroy'
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:16:in `max_by'
+Completed 200 OK in 101ms (Views: 29.8ms | ActiveRecord: 5.2ms | Allocations: 1268201)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:48:23 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 52ms (Views: 28.9ms | ActiveRecord: 0.9ms | Allocations: 665670)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:49:00 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 72ms (Views: 63.9ms | ActiveRecord: 1.5ms | Allocations: 754348)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:49:01 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 59ms (Views: 33.6ms | ActiveRecord: 1.1ms | Allocations: 677538)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:49:43 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 57ms (Views: 32.2ms | ActiveRecord: 1.0ms | Allocations: 677538)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:49:58 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:49:59 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 60ms (Views: 34.9ms | ActiveRecord: 1.1ms | Allocations: 677540)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:50:16 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 75ms (Views: 67.9ms | ActiveRecord: 4.1ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:50:17 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 55ms (Views: 32.2ms | ActiveRecord: 1.0ms | Allocations: 677540)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:50:53 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 72ms (Views: 64.2ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:50:55 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 200 OK in 63ms (Views: 35.6ms | ActiveRecord: 1.2ms | Allocations: 677540)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 10:51:07 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.4ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (3.6ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 15:51:07.216224"], ["updated_at", "2020-02-14 15:51:07.216224"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 102ms (Views: 7.6ms | ActiveRecord: 7.1ms | Allocations: 1181631)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:51:07 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms | Allocations: 279792)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started POST "/api/v1/games" for ::1 at 2020-02-14 10:51:18 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (2.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.2ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 15:51:18.281286"], ["updated_at", "2020-02-14 15:51:18.281286"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 103ms (Views: 5.7ms | ActiveRecord: 6.7ms | Allocations: 1178142)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:51:18 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms | Allocations: 289469)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started POST "/api/v1/games" for ::1 at 2020-02-14 10:52:20 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (1.3ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (3.2ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 15:52:20.353249"], ["updated_at", "2020-02-14 15:52:20.353249"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 107ms (Views: 7.1ms | ActiveRecord: 6.7ms | Allocations: 1180561)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:52:20 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.2ms | Allocations: 299145)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:54:39 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.3ms | Allocations: 298837)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:54:58 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms | Allocations: 5706)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:54:59 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms | Allocations: 775)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:55:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.1ms | Allocations: 5765)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 10:55:48 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 15:55:48.152724"], ["updated_at", "2020-02-14 15:55:48.152724"]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 12602)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:55:48 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:57:22 -0500
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:57:22 -0500
+  ↳ (byebug):1:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:57:22 -0500
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:57:22 -0500
+  [1m[36mGame Destroy (0.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 42]]
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ (byebug):1:in `index'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `index'
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by Api::V1::GamesController#index as */*
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `max_by'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 500 Internal Server Error in 11911ms (ActiveRecord: 0.2ms | Allocations: 22191)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:4:in `max_by'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `max_by'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+Processing by Api::V1::GamesController#index as */*
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:58:08 -0500
+Completed 500 Internal Server Error in 29826ms (ActiveRecord: 0.3ms | Allocations: 34486)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:4:in `max_by'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `max_by'
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.3ms | Allocations: 50480)
+
+
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `max_by'
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:4:in `max_by'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+  ↳ app/controllers/api/v1/games_controller.rb:4:in `max_by'
+Completed 500 Internal Server Error in 140655ms (ActiveRecord: 2.5ms | Allocations: 2053723)
+
+
+Completed 500 Internal Server Error in 28635ms (ActiveRecord: 0.2ms | Allocations: 58196)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:4:in `max_by'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:4:in `max_by'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 5599)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 10:58:15 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.6ms | Allocations: 6159)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 10:58:25 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 15:58:25.726777"], ["updated_at", "2020-02-14 15:58:25.726777"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 12667)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 10:58:25 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms | Allocations: 772)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:00:22 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 5612)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:00:31 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "brad"], ["card_set_id", 1], ["created_at", "2020-02-14 16:00:31.204760"], ["updated_at", "2020-02-14 16:00:31.204760"]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 10628)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:00:31 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ (byebug):1:in `max_by'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Destroy (0.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 43]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Destroy (0.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 44]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Destroy (0.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 45]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Destroy (0.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 46]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."score" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:02:41 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.7ms | Allocations: 6159)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:02:55 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", ""], ["card_set_id", 1], ["created_at", "2020-02-14 16:02:55.085935"], ["updated_at", "2020-02-14 16:02:55.085935"]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 12667)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:02:55 -0500
+Processing by Api::V1::GamesController#index as */*
+Completed 500 Internal Server Error in 106540ms (ActiveRecord: 0.0ms | Allocations: 96503)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:15:40 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"hi", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"hi", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (2.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mCardSet Load (3.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[36mGame Create (3.4ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "hi"], ["card_set_id", 1], ["created_at", "2020-02-14 16:15:40.959294"], ["updated_at", "2020-02-14 16:15:40.959294"]]
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10:in `create'
+Completed 200 OK in 74ms (Views: 2.9ms | ActiveRecord: 10.9ms | Allocations: 858463)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:15:41 -0500
+Processing by Api::V1::GamesController#index as */*
+Completed 500 Internal Server Error in 26738ms (ActiveRecord: 0.0ms | Allocations: 87602)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/games_controller.rb:4:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:16:18 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 6159)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:16:26 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "brad"], ["card_set_id", 1], ["created_at", "2020-02-14 16:16:26.434769"], ["updated_at", "2020-02-14 16:16:26.434769"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 12667)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:16:26 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms | Allocations: 772)
+
+
+  
+ArgumentError (comparison of NilClass with 30 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:17:05 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1770)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:17:12 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1771)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:17:21 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mCardSet Load (0.1ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "brad"], ["card_set_id", 1], ["created_at", "2020-02-14 16:17:21.010444"], ["updated_at", "2020-02-14 16:17:21.010444"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3355)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:17:21 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms | Allocations: 745)
+
+
+  
+ArgumentError (comparison of NilClass with 100 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:17:43 -0500
+Processing by Api::V1::CardsController#index as HTML
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1751)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:17:49 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `max_by'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms | Allocations: 743)
+
+
+  
+ArgumentError (comparison of NilClass with 100 failed):
+  
+app/controllers/api/v1/games_controller.rb:3:in `max_by'
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:19:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/ap/flatiron/mod3/mod_3_project/memory-game-backend/app/controllers/api/v1/games_controller.rb:4: syntax error, unexpected do, expecting then or ';' or '\n'
+...        if game.score == nil do
+...                             ^~
+/Users/ap/flatiron/mod3/mod_3_project/memory-game-backend/app/controllers/api/v1/games_controller.rb:6: syntax error, unexpected end, expecting '}'
+            end 
+            ^~~
+/Users/ap/flatiron/mod3/mod_3_project/memory-game-backend/app/controllers/api/v1/games_controller.rb:8: syntax error, unexpected '}', expecting end
+        }
+        ^):
+  
+app/controllers/api/v1/games_controller.rb:4: syntax error, unexpected do, expecting then or ';' or '\n'
+app/controllers/api/v1/games_controller.rb:6: syntax error, unexpected end, expecting '}'
+app/controllers/api/v1/games_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/games_controller.rb:4: syntax error, unexpected do, expecting then or ';' or '\n'
+app/controllers/api/v1/games_controller.rb:6: syntax error, unexpected end, expecting '}'
+app/controllers/api/v1/games_controller.rb:8: syntax error, unexpected '}', expecting end
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3357)
+
+
+  
+NoMethodError (undefined method `each' for #<Class:0x00007fb99610dbd0>):
+  
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:30 -0500
+Processing by Api::V1::GamesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2262)
+
+
+  
+NoMethodError (undefined method `each' for #<Class:0x00007fb99610dbd0>):
+  
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:32 -0500
+Processing by Api::V1::GamesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2262)
+
+
+  
+NoMethodError (undefined method `each' for #<Class:0x00007fb99610dbd0>):
+  
+app/controllers/api/v1/games_controller.rb:3:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:8:in `max_by'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms | Allocations: 5814)
+
+
+  
+ArgumentError (comparison of NilClass with 100 failed):
+  
+app/controllers/api/v1/games_controller.rb:8:in `max_by'
+app/controllers/api/v1/games_controller.rb:8:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:52 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:8:in `max_by'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1299)
+
+
+  
+ArgumentError (comparison of NilClass with 100 failed):
+  
+app/controllers/api/v1/games_controller.rb:8:in `max_by'
+app/controllers/api/v1/games_controller.rb:8:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:22:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 62186ms (ActiveRecord: 0.5ms | Allocations: 142553)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/games_controller.rb:9:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:24:11 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 10430ms (ActiveRecord: 0.6ms | Allocations: 46546)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/games_controller.rb:9:in `index'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:24:27 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (3.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 124ms (Views: 25.6ms | ActiveRecord: 10.1ms | Allocations: 1332057)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:24:50 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 111ms (Views: 91.9ms | ActiveRecord: 7.3ms | Allocations: 1332960)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:25:00 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (0.9ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (3.0ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "brad"], ["card_set_id", 1], ["created_at", "2020-02-14 16:25:01.127415"], ["updated_at", "2020-02-14 16:25:01.127415"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 194ms (Views: 5.3ms | ActiveRecord: 12.3ms | Allocations: 2154180)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:25:01 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 70ms (Views: 37.9ms | ActiveRecord: 3.8ms | Allocations: 746111)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:26:06 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 87ms (Views: 79.2ms | ActiveRecord: 1.2ms | Allocations: 756767)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:27:48 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>nil, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>nil, "card_set_id"=>1}}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (1.4ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (3.7ms)[0m  [1m[32mINSERT INTO "games" ("username", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "brad"], ["card_set_id", 1], ["created_at", "2020-02-14 16:27:49.076982"], ["updated_at", "2020-02-14 16:27:49.076982"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 118ms (Views: 9.7ms | ActiveRecord: 9.5ms | Allocations: 1180419)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:27:49 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 78ms (Views: 42.4ms | ActiveRecord: 1.2ms | Allocations: 878592)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:27:52 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 4.0ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:28:02 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"1", "score"=>0, "card_set_id"=>1, "game"=>{"username"=>"1", "score"=>0, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (3.6ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "1"], ["score", 0], ["card_set_id", 1], ["created_at", "2020-02-14 16:28:02.533752"], ["updated_at", "2020-02-14 16:28:02.533752"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 127ms (Views: 6.3ms | ActiveRecord: 9.5ms | Allocations: 1340814)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:28:02 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 80ms (Views: 37.0ms | ActiveRecord: 1.1ms | Allocations: 978927)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:28:06 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 71ms (Views: 65.1ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:28:30 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 1.0ms | Allocations: 754350)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:29:37 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"Daniel", "score"=>20, "card_set_id"=>1, "game"=>{"username"=>"Daniel", "score"=>20, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (1.3ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (3.9ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Daniel"], ["score", 20], ["card_set_id", 1], ["created_at", "2020-02-14 16:29:37.940248"], ["updated_at", "2020-02-14 16:29:37.940248"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 111ms (Views: 7.2ms | ActiveRecord: 6.7ms | Allocations: 1193172)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:29:38 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 78ms (Views: 40.7ms | ActiveRecord: 3.8ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:29:52 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 81ms (Views: 40.3ms | ActiveRecord: 3.8ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:32:10 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 81ms (Views: 41.0ms | ActiveRecord: 1.2ms | Allocations: 900834)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:32:12 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 73ms (Views: 38.0ms | ActiveRecord: 4.0ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:37:58 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 75ms (Views: 39.1ms | ActiveRecord: 4.0ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:38:14 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 59.1ms | ActiveRecord: 1.0ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:38:24 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 76ms (Views: 39.2ms | ActiveRecord: 3.9ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:39:06 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 1.1ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:39:09 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 75ms (Views: 38.6ms | ActiveRecord: 1.2ms | Allocations: 900834)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:39:20 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 75ms (Views: 67.6ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:39:21 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 77ms (Views: 36.4ms | ActiveRecord: 4.3ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:39:33 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 66ms (Views: 60.3ms | ActiveRecord: 1.0ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:39:34 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 74ms (Views: 40.1ms | ActiveRecord: 1.1ms | Allocations: 900834)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:39:54 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 1.2ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:39:55 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 78ms (Views: 39.1ms | ActiveRecord: 1.4ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:41:19 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 68ms (Views: 61.7ms | ActiveRecord: 1.1ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:41:19 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 77ms (Views: 38.2ms | ActiveRecord: 4.0ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:41:28 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 1.2ms | Allocations: 754348)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:41:29 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 85ms (Views: 42.4ms | ActiveRecord: 4.2ms | Allocations: 900832)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:42:34 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (3.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 69ms (Views: 60.0ms | ActiveRecord: 3.6ms | Allocations: 754350)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:36 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 82ms (Views: 39.8ms | ActiveRecord: 4.1ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:37 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 78ms (Views: 39.0ms | ActiveRecord: 1.2ms | Allocations: 900834)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:38 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 79ms (Views: 40.4ms | ActiveRecord: 4.0ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:38 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 79ms (Views: 39.1ms | ActiveRecord: 3.8ms | Allocations: 900832)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:38 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 76ms (Views: 38.3ms | ActiveRecord: 1.2ms | Allocations: 900834)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:42:44 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"brad", "score"=>0, "card_set_id"=>1, "game"=>{"username"=>"brad", "score"=>0, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (1.3ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "brad"], ["score", 0], ["card_set_id", 1], ["created_at", "2020-02-14 16:42:44.577537"], ["updated_at", "2020-02-14 16:42:44.577537"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 116ms (Views: 6.4ms | ActiveRecord: 4.5ms | Allocations: 1195167)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:42:44 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 81ms (Views: 40.2ms | ActiveRecord: 1.3ms | Allocations: 911955)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:43:15 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"boooo", "score"=>0, "card_set_id"=>1, "game"=>{"username"=>"boooo", "score"=>0, "card_set_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (1.2ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "boooo"], ["score", 0], ["card_set_id", 1], ["created_at", "2020-02-14 16:43:16.058687"], ["updated_at", "2020-02-14 16:43:16.058687"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 110ms (Views: 8.5ms | ActiveRecord: 6.9ms | Allocations: 1192866)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:43:16 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 79ms (Views: 38.2ms | ActiveRecord: 1.5ms | Allocations: 923076)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:43:22 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (4.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 88ms (Views: 44.4ms | ActiveRecord: 4.3ms | Allocations: 923074)
+
+
+Started DELETE "/api/v1/games/48" for ::1 at 2020-02-14 11:43:27 -0500
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mGame Load (3.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:19:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[36mGame Destroy (1.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:21:in `max_by'
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 7.6ms | Allocations: 1041969)
+
+
+  
+ArgumentError (comparison of Integer with nil failed):
+  
+app/controllers/api/v1/games_controller.rb:21:in `max_by'
+app/controllers/api/v1/games_controller.rb:21:in `destroy'
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:43:28 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (3.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 73ms (Views: 38.3ms | ActiveRecord: 3.3ms | Allocations: 909190)
+
+
+Started GET "/api/v1/cards" for ::1 at 2020-02-14 11:43:35 -0500
+Processing by Api::V1::CardsController#index as */*
+  [1m[36mCard Load (4.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/v1/cards_controller.rb:4:in `index'
+Completed 200 OK in 69ms (Views: 59.5ms | ActiveRecord: 4.6ms | Allocations: 754348)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:43:37 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 75ms (Views: 37.7ms | ActiveRecord: 1.6ms | Allocations: 909193)
+
+
+Started POST "/api/v1/games" for ::1 at 2020-02-14 11:43:48 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"username"=>"1", "score"=>0, "card_set_id"=>1, "game"=>{"username"=>"1", "score"=>0, "card_set_id"=>1}}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mCardSet Load (1.4ms)[0m  [1m[34mSELECT "card_sets".* FROM "card_sets" WHERE "card_sets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[36mGame Create (1.3ms)[0m  [1m[32mINSERT INTO "games" ("username", "score", "card_set_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "1"], ["score", 0], ["card_set_id", 1], ["created_at", "2020-02-14 16:43:48.396632"], ["updated_at", "2020-02-14 16:43:48.396632"]]
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/games_controller.rb:14:in `create'
+Completed 200 OK in 109ms (Views: 6.4ms | ActiveRecord: 4.9ms | Allocations: 1192864)
+
+
+Started GET "/api/v1/games" for ::1 at 2020-02-14 11:43:48 -0500
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:3:in `index'
+Completed 200 OK in 73ms (Views: 38.1ms | ActiveRecord: 1.2ms | Allocations: 920314)
+
+

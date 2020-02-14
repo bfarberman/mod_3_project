@@ -1,6 +1,11 @@
 class Api::V1::GamesController < ApplicationController
     def index
-        @games = Game.all.max_by(10) { |game| game.score }
+        @games = Game.all.each do |game| 
+            if game.score == nil
+                game.score = 0
+            end 
+        end
+        @games = @games.max_by(10) { |game| game.score }
       
         render json: @games, except: [:created_at, :updated_at]
     end

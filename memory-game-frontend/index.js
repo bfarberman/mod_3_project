@@ -103,22 +103,32 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(timer)
         popUp.style.display = 'block';
         let currentScore = score.innerText.split(" ")[1]
-        let numScore = parseInt(currentScore)
-        popUp.innerHTML = `<h2><strong>Game Over! <br>
-            Your score was ${numScore}. </h2><br>
-            
-      <form class="score" style="">
+        let numScore = parseInt(currentScore)        
+        
+        popUp.innerHTML = `
+        <button id="close">X</button>
+        <h2><strong>Game Over! <br>
+        Your score was ${numScore}. </h2><br>
+        
+        <form class="score" style="">
         <h3>Enter your name:</h3>
         <input id="username" type="text" name="username" value="" class="input-text">
         <br>
         <input id="submit" type="submit" name="submit" value="Submit" class="submit">
         </form>`
+        
+        const xButton = document.getElementById("close")
+
+        xButton.addEventListener("click", (e)=>{
+            console.log("hi")
+            popUp.style.display = 'none'
+        })
 
         const form = document.getElementsByClassName("score")[0]
         form.addEventListener("submit", function (e) {
             e.preventDefault()
             let name = e.target.username.value
-            let score = parseInt(e.target.parentElement.parentElement.children[0].innerText.split(' ')[4])
+            let score = parseInt(e.target.parentElement.parentElement.children[1].innerText.split(' ')[4])
             cardSetId = parseInt(e.target.parentElement.parentElement.parentElement.children[4].dataset.id)
                 fetch("http://localhost:3000/api/v1/games", {
                     method: "POST",
@@ -149,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 hideButton.innerText = "X"
                 leaderDiv.appendChild(hideButton)
                 const h3 = document.createElement("h3");
-                h3.innerText = "TOP SCORES"
+                h3.innerHTML = "TOP 10 SCORES"
                 leaderDiv.appendChild(h3);
                 const ol = document.createElement('ol');
 
@@ -157,10 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     leaderboardPopUp.style.display = 'none'
                 })
 
-
+                console.log(games)
                 games.forEach(game => {
                     const li = document.createElement('li');
-                    li.innerText = `Name: ${game.username},     Score: (${game.score})`
+                    li.innerHTML = `Name: ${game.username} &nbsp &nbsp &nbsp Score: (${game.score})`
                     const deleteButton = document.createElement('button');
                     deleteButton.setAttribute("id", "delete")
                     deleteButton.innerText = "Delete"

@@ -70,7 +70,17 @@
     /* overflow: auto; */
   }
 
-  background-color:rgb(95, 29, 201);
-  background-color: rgb(61, 178, 224);
-  background-color: black;
-  color: white;
+  #close {
+    position: absolute;
+    right: 20px;
+  }
+
+  #hide {
+    position: absolute;
+    right: 20px;
+  }
+
+  #delete {
+    position: absolute;
+    right: 20px;
+  }
